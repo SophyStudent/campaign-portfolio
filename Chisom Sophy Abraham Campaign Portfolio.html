@@ -1,0 +1,589 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Chisom Sophy Abraham Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: airy light page. Floating pill nav, split hero with pastel bento stats, pastel color-coded sections, tile-based range charts, vertical timeline for the show plan. Single light look by choice. */
+:root{
+  color-scheme:light;
+  --bg:#FAFBFB; --paper:#FFFFFF; --ink:#14212B; --ink2:#4A5B68; --muted:#7A8995; --line:#E3E9EC;
+  --teal:#0E8F7E; --teal-d:#0A6E61; --coral:#F26B4B;
+  --mint:#DDF3EC; --sky:#DCEBFA; --peach:#FFE4D8; --lilac:#EDE6FA; --butter:#FFF1BF; --rose:#FBE1E8;
+  --f-serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --f-sans:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --shadow:0 1px 2px rgba(20,33,43,.04),0 8px 24px rgba(20,33,43,.05);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0;
+  overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+.wrap{max-width:1080px;margin:0 auto;position:relative}
+h1,h2,h3,h4,p,ul,ol,dl{margin:0}
+a{color:var(--teal-d)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.mono{font-family:var(--f-mono)}
+.serif{font-family:var(--f-serif);font-weight:400}
+.label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* ambient glow */
+.glow{position:absolute;inset:0 0 auto 0;height:760px;pointer-events:none;overflow:hidden;z-index:0}
+.glow i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.75}
+.glow i:nth-child(1){width:420px;height:420px;background:var(--mint);left:-120px;top:-60px}
+.glow i:nth-child(2){width:380px;height:380px;background:var(--peach);right:-100px;top:60px}
+.glow i:nth-child(3){width:300px;height:300px;background:var(--sky);left:42%;top:360px;opacity:.6}
+
+/* nav */
+nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:30;margin:10px auto 0;max-width:max-content;width:100%}
+nav .pill{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:99px;padding:5px;box-shadow:var(--shadow);max-width:100%}
+nav a{white-space:nowrap;text-decoration:none;color:var(--ink2);font-size:13px;font-weight:600;padding:7px 13px;border-radius:99px}
+nav a:hover{background:var(--mint);color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:44px;padding-block:72px 56px;position:relative;z-index:1;align-items:center}
+.hero>*{min-width:0}
+.hero h1{font-family:var(--f-serif);font-weight:400;font-size:clamp(52px,8.4vw,104px);line-height:.95;letter-spacing:-.02em;margin-block:16px 22px}
+.hero h1 em{color:var(--teal);font-style:italic}
+.role{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+.role span{font-size:13px;font-weight:600;padding:6px 12px;border-radius:99px;background:var(--paper);border:1px solid var(--line)}
+.lede{display:grid;gap:12px;color:var(--ink2);font-size:16.5px;max-width:62ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14.5px;padding:13px 22px;border-radius:99px;border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn.fill{background:var(--ink);color:#fff}
+.btn:hover{transform:translateY(-1px)}
+.contact{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{display:inline-flex;align-items:center;gap:9px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:14px;color:var(--ink);text-decoration:none;min-width:0;max-width:100%}
+.chip b{font-family:var(--f-mono);font-weight:500;font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;flex:none}
+.chip span{overflow-wrap:anywhere}
+.chip button{flex:none;font:inherit;font-size:12px;font-weight:600;border:0;background:var(--mint);color:var(--teal-d);border-radius:8px;padding:3px 9px;cursor:pointer}
+
+/* bento stats */
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{border-radius:22px;padding:20px 20px 18px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-width:0}
+.tile strong{font-family:var(--f-serif);font-weight:400;font-size:56px;line-height:.9;letter-spacing:-.02em}
+.tile strong.sm{font-size:30px;line-height:1.05}
+.tile span{font-size:13px;color:var(--ink2);font-weight:500;line-height:1.35}
+.t1{background:var(--mint);grid-column:1/-1;flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+.t1 strong{font-size:96px}
+.t1 span{max-width:14ch;font-size:14px}
+.t2{background:var(--sky)} .t3{background:var(--peach)} .t4{background:var(--lilac)} .t5{background:var(--butter)}
+.years{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-top:2px}
+.years i{height:8px;border-radius:99px;background:var(--teal);opacity:.85}
+.years-l{grid-column:1/-1;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+
+/* sections */
+section{padding-block:68px 8px;position:relative;z-index:1;scroll-margin-top:70px}
+.sec-head{display:grid;gap:14px;margin-bottom:34px}
+.sec-head h2{font-family:var(--f-serif);font-weight:400;font-size:clamp(36px,6vw,64px);line-height:1;letter-spacing:-.015em}
+.sec-head h2 em{font-style:italic;color:var(--teal)}
+.sec-head p{color:var(--ink2);max-width:66ch}
+.bar{width:48px;height:5px;border-radius:99px;background:var(--coral)}
+.sub{font-family:var(--f-serif);font-weight:400;font-size:30px;line-height:1.1;margin:44px 0 16px}
+
+/* about + what */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:clamp(22px,4vw,40px);box-shadow:var(--shadow)}
+.about>*{min-width:0}
+.about p{color:var(--ink2)}
+.about p+p{margin-top:14px}
+.what{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.wcard{border-radius:24px;padding:24px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.wcard h3{font-size:19px;font-weight:700;line-height:1.25}
+.wcard p{font-size:14.5px;color:var(--ink2)}
+.wcard::before{content:"";width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 8px var(--dot,var(--teal));display:block;margin-bottom:6px}
+.c-mint{background:var(--mint);--dot:#0E8F7E}.c-sky{background:var(--sky);--dot:#2F7FD0}.c-peach{background:var(--peach);--dot:#F26B4B}
+.c-lilac{background:var(--lilac);--dot:#7A5CD6}.c-butter{background:var(--butter);--dot:#D9A100}.c-rose{background:var(--rose);--dot:#E0537A}
+.wide{grid-column:1/-1}
+
+/* tabs */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin}
+.tab{flex:none;font:inherit;font-size:14px;font-weight:700;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:10px 16px;border-radius:99px;text-align:left;line-height:1.25}
+.tab small{display:block;font-family:var(--f-mono);font-weight:400;font-size:10.5px;color:var(--muted);letter-spacing:.05em}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab[aria-selected="true"] small{color:#fff;opacity:.65}
+
+/* case panel */
+.panel{border-radius:28px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.panel[hidden]{display:none}
+.phead{padding:clamp(22px,4vw,38px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 36px;align-items:flex-start;background:var(--tint,var(--mint))}
+.phead h3{font-family:var(--f-serif);font-weight:400;font-size:clamp(34px,5.4vw,60px);line-height:1;letter-spacing:-.01em}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:5px 16px;font-size:14px;min-width:0;max-width:100%}
+.facts dt{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);padding-top:4px;opacity:.8}
+.facts dd{margin:0;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.pbody{padding:clamp(22px,4vw,38px);display:grid;grid-template-columns:1fr 1.15fr;gap:36px}
+.pbody>*{min-width:0}
+.pbody h4{font-family:var(--f-mono);font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.pbody ul{padding:0;list-style:none;display:grid;gap:10px;font-size:15px;color:var(--ink2)}
+.pbody li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.pbody li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:9px}
+.note{font-size:13px;color:var(--muted);margin-top:16px}
+.hl{background:var(--tint,var(--mint));border-radius:18px;padding:18px 20px;font-size:15.5px;font-weight:500}
+.hl+.hl{margin-top:10px}
+
+/* metric tiles with range bars */
+.mt{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px}
+.m{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:14px 16px 14px;min-width:0}
+.m .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.m .v{font-family:var(--f-serif);font-size:30px;line-height:1.1;margin:4px 0 12px;letter-spacing:-.01em;overflow-wrap:anywhere}
+.track{position:relative;height:10px;border-radius:99px;background:#E8EEF0}
+.rf{position:absolute;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),#47C2AE);min-width:8px}
+.rf.open{background:linear-gradient(90deg,var(--teal),#47C2AE 65%,rgba(71,194,174,.15))}
+.sc{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:6px}
+
+/* influencer */
+.inf{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.inf>*{min-width:0}
+.card{border-radius:28px;padding:clamp(22px,4vw,36px);min-width:0}
+.card h4{font-family:var(--f-mono);font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:8px;opacity:.85}
+.inf .left{background:var(--rose);display:grid;gap:20px;align-content:start}
+.inf .right{background:var(--mint)}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;max-width:340px;margin-top:12px}
+.dots i{aspect-ratio:1;border-radius:50%;background:#E0537A;display:block}
+.big{font-family:var(--f-serif);font-size:clamp(84px,14vw,150px);line-height:.85;color:var(--teal-d);letter-spacing:-.03em;margin:4px 0 12px}
+.coins{display:grid;gap:10px;margin:18px 0 16px}
+.crow{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:center;font-family:var(--f-mono);font-size:12px}
+.cs{display:flex;flex-wrap:wrap;gap:5px}
+.cs i{width:26px;height:26px;border-radius:50%;background:var(--ink);display:grid;place-items:center;color:#fff;font-size:11px;font-style:normal}
+.cs.b i{background:var(--teal)}
+
+/* sites / landing */
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.site{border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.site .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+.site h3{font-family:var(--f-serif);font-weight:400;font-size:36px;line-height:1}
+.site p{font-size:14.5px;color:var(--ink2)}
+.site .go{margin-top:auto;font-weight:700;font-size:13.5px;overflow-wrap:anywhere}
+.meta{display:grid;gap:12px}
+.meta b{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.lpbody{padding:clamp(22px,4vw,38px);display:grid;gap:30px}
+.lpbody h4{font-family:var(--f-mono);font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--bg)}
+td:first-child{font-weight:600;white-space:nowrap}
+.thought{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.thought div{border-radius:18px;padding:16px 16px 18px;min-width:0;background:var(--c)}
+.thought div:nth-child(1){--c:var(--mint)}.thought div:nth-child(2){--c:var(--sky)}.thought div:nth-child(3){--c:var(--peach)}.thought div:nth-child(4){--c:var(--lilac)}.thought div:nth-child(5){--c:var(--butter)}
+.thought b{display:block;font-size:15px;margin-bottom:6px;line-height:1.3}
+.thought span{font-size:13.5px;color:var(--ink2);display:block}
+.strategy{background:var(--ink);color:#fff;border-radius:18px;padding:16px 20px;font-size:15px}
+.strategy b{color:#7FE0CC}
+.lp-intro{color:var(--ink2);max-width:72ch}
+
+/* skills */
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.g{border-radius:22px;padding:18px 20px;min-width:0}
+.g h3{font-family:var(--f-mono);font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:13px;font-weight:600;background:rgba(255,255,255,.8);color:var(--ink);padding:4px 11px;border-radius:99px}
+details.sk{background:var(--paper);border:1px solid var(--line);border-radius:20px;margin-top:10px;overflow:hidden}
+details.sk summary{cursor:pointer;padding:16px 22px;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;gap:12px;list-style:none}
+details.sk summary::-webkit-details-marker{display:none}
+details.sk summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--mint);color:var(--teal-d);display:grid;place-items:center;font-size:18px;line-height:1}
+details.sk[open] summary::after{content:"–"}
+.skbody{padding:2px 22px 22px;display:grid;grid-template-columns:1.4fr 1fr;gap:26px}
+.skbody>*{min-width:0}
+.skbody h4{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
+.skbody ul{padding:0;list-style:none;display:grid;gap:6px;font-size:14.5px;color:var(--ink2)}
+.skbody li{display:grid;grid-template-columns:16px 1fr;gap:6px}
+.skbody li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--coral);margin-top:9px}
+.skbody .intro{grid-column:1/-1;color:var(--ink2);font-size:14.5px}
+.skbody .tags span{background:var(--mint)}
+
+/* creds */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.two>*{min-width:0}
+.certs{display:grid;gap:8px}
+.cert{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:14.5px;font-weight:500}
+.cert b{font-family:var(--f-mono);font-weight:500;font-size:12px;color:var(--teal-d);background:var(--mint);padding:3px 10px;border-radius:99px;flex:none}
+.org{border-radius:22px;padding:22px}
+.org h3{font-family:var(--f-serif);font-weight:400;font-size:28px;margin-bottom:10px}
+.org ul{list-style:none;padding:0;display:grid;gap:8px;font-size:15px;font-weight:600}
+.org li span{display:block;font-weight:400;color:var(--ink2);font-size:13.5px}
+.note2{margin-top:22px;color:var(--ink2);max-width:76ch}
+
+/* show timeline */
+.tl{list-style:none;padding:0;position:relative;display:grid;gap:16px;margin-left:6px}
+.tl::before{content:"";position:absolute;left:21px;top:20px;bottom:20px;width:2px;background:repeating-linear-gradient(to bottom,var(--line) 0 6px,transparent 6px 12px)}
+.tl>li{display:grid;grid-template-columns:44px 1fr;gap:18px;position:relative}
+.tl .n{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font-family:var(--f-serif);font-size:24px;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg)}
+.tl .body{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:var(--shadow);min-width:0}
+.tl h3{font-size:19px;font-weight:700;margin-bottom:10px;line-height:1.3}
+.tl p{color:var(--ink2);font-size:15px}
+.tl p+p,.tl ul+p,.tl p+ul{margin-top:10px}
+.tl ul{padding:0;list-style:none;display:grid;gap:4px;font-size:14.5px;color:var(--ink2)}
+.tl ul li{display:grid;grid-template-columns:16px 1fr;gap:6px}
+.tl ul li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);margin-top:9px}
+.roles{display:grid;gap:8px;margin:2px 0 10px}
+.roles div{border-radius:14px;padding:12px 14px;font-size:14.5px;color:var(--ink2);background:var(--c)}
+.roles div:nth-child(1){--c:var(--mint)}.roles div:nth-child(2){--c:var(--rose)}.roles div:nth-child(3){--c:var(--sky)}.roles div:nth-child(4){--c:var(--butter)}
+.roles b{color:var(--ink)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:12px}
+.metrics>div{border-radius:18px;padding:16px 18px;min-width:0;background:var(--c)}
+.metrics>div:nth-child(1){--c:var(--sky)}.metrics>div:nth-child(2){--c:var(--mint)}.metrics>div:nth-child(3){--c:var(--lilac)}.metrics>div:nth-child(4){--c:var(--peach)}
+.metrics h4{font-family:var(--f-serif);font-weight:400;font-size:24px;margin-bottom:8px}
+.metrics ul{padding:0;list-style:none;display:grid;gap:3px;font-size:14px;color:var(--ink2)}
+.need{margin-top:34px;background:var(--ink);color:#fff;border-radius:28px;padding:clamp(24px,4.5vw,44px)}
+.need h3{font-family:var(--f-serif);font-weight:400;font-size:clamp(30px,4.5vw,44px);margin-bottom:14px}
+.need ul{padding:0;list-style:none;display:grid;gap:10px;margin-top:12px}
+.need li{display:grid;grid-template-columns:18px 1fr;gap:8px;color:#E3EDF0}
+.need li::before{content:"";width:8px;height:8px;border-radius:50%;background:#7FE0CC;margin-top:9px}
+.need p{color:#C9D8DD}
+.need p.after{margin-top:20px;color:#fff;font-weight:500}
+
+/* footer */
+.fin{position:relative;margin-block:68px 36px;border-radius:32px;padding:clamp(28px,6vw,64px);overflow:hidden;background:linear-gradient(135deg,var(--mint),var(--sky) 55%,var(--peach));z-index:1}
+.fin h2{font-family:var(--f-serif);font-weight:400;font-size:clamp(44px,8vw,92px);line-height:.95;letter-spacing:-.02em;margin-block:14px 12px}
+.fin .role{margin-bottom:0}
+.fin p.go{font-size:19px;max-width:48ch;margin-top:22px;color:var(--ink)}
+.fin .contact{margin-top:26px}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding-block:48px 36px;gap:30px}
+  .about,.pbody,.inf,.two,.skbody{grid-template-columns:1fr}
+  section{padding-block:52px 4px}
+  .t1 strong{font-size:76px}
+}
+@media (max-width:520px){
+  .tl>li{grid-template-columns:36px 1fr;gap:12px}
+  .tl .n{width:36px;height:36px;font-size:20px}
+  .tl::before{left:17px}
+  .tl .body{padding:18px}
+  .facts{grid-template-columns:1fr;gap:0}
+  .facts dt{padding-top:8px}
+  td:first-child{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+
+<div class="wrap">
+  <div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <nav aria-label="Sections"><div class="pill">
+    <a href="#about">About Me</a><a href="#work">Selected Work</a><a href="#influencer">Influencer Marketing</a><a href="#web">Websites &amp; Web Applications</a><a href="#landing">Landing Pages</a><a href="#skills">Technical Skills &amp; Tools</a><a href="#certs">Certifications</a><a href="#show">Your Show</a><a href="#contact">Let's Talk</a>
+  </div></nav>
+
+  <header class="hero" id="top">
+    <div>
+      <div class="role"><span>Performance Marketer</span><span>Technical SEO</span><span>Analytics</span><span>Web Development &amp; Marketing Technology</span></div>
+      <h1>Chisom Sophy <em>Abraham</em></h1>
+      <div class="lede">
+        <p>Digital marketing professional with 12 years of experience working with marketing agencies and businesses in the US and Nigeria. I plan and manage paid advertising campaigns across Meta, Google, TikTok, and Amazon; conduct market and competitor research; develop creative strategies; implement tracking and analytics; and build the websites, landing pages, and digital infrastructure that support online visibility and marketing performance.</p>
+        <p>I combine marketing strategy with technical implementation, helping businesses strengthen their online presence, improve how their digital platforms are structured, reach relevant audiences, and turn marketing activity into measurable results.</p>
+      </div>
+      <div class="cta">
+        <a class="btn fill" href="#work">See My Work</a>
+        <a class="btn" href="#show">What I Would Do for Your Show</a>
+      </div>
+      <div class="contact">
+        <span class="chip"><b>Email</b><span>chisomsophyabraham@gmail.com</span><button type="button" data-copy="chisomsophyabraham@gmail.com">Copy</button></span>
+        <span class="chip"><b>Phone</b><span>+234 806 859 3345</span><button type="button" data-copy="+234 806 859 3345">Copy</button></span>
+        <a class="chip" href="https://github.com/SophyStudent" target="_blank" rel="noopener"><b>GitHub</b><span>https://github.com/SophyStudent</span></a>
+      </div>
+    </div>
+
+    <div class="bento" aria-label="Highlights">
+      <div class="tile t1"><strong>12</strong><span>Years of Experience | 2014–2026</span>
+        <div class="years" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="years-l" aria-hidden="true"><span>2014</span><span>2026</span></div>
+      </div>
+      <div class="tile t2"><strong>3</strong><span>US Agency Teams</span></div>
+      <div class="tile t3"><strong>1</strong><span>Nigerian Company</span></div>
+      <div class="tile t4"><strong>6</strong><span>Featured Brand Engagements</span></div>
+      <div class="tile t5"><strong class="sm">US &amp; Nigeria</strong><span>Markets</span></div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="sec-head"><div class="bar"></div><h2>About <em>Me</em></h2></div>
+    <div class="about">
+      <div>
+        <p>I work as an independent contractor within agency teams and directly with businesses, contributing to digital marketing strategy, campaign execution, technical implementation, and performance analysis.</p>
+        <p>My work spans the full digital marketing process: understanding the market, identifying opportunities, reaching the right audiences, developing and evaluating creative strategies, implementing conversion tracking, analyzing results, and improving campaign performance.</p>
+      </div>
+      <div>
+        <p>I also work on the technical side of digital visibility, building and structuring websites, landing pages, and web applications to ensure that a business's digital platforms are properly organized, accessible, search-friendly, and aligned with its marketing objectives.</p>
+        <p>This combination allows me to approach digital marketing from both the promotional and technical perspectives.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">What I Do</h3>
+    <div class="what">
+      <article class="wcard c-mint"><h3>Paid Advertising &amp; Campaign Management</h3><p>Planning, setting up, and managing campaigns across Meta, Google, TikTok, Amazon, and programmatic advertising platforms. I develop campaign structures, audience strategies, funnels, and optimization plans designed to move people from initial awareness to conversion.</p></article>
+      <article class="wcard c-sky"><h3>Market &amp; Competitor Research</h3><p>Researching competitor advertising, keywords, audiences, market positioning, and customer behavior to identify opportunities, understand demand, and inform campaign strategy.</p></article>
+      <article class="wcard c-peach"><h3>Creative Strategy &amp; Performance Analysis</h3><p>Studying and analyzing advertising creatives, messaging, hooks, formats, and campaign performance to identify what resonates with audiences. I develop insightful recommendations on creative direction, messaging angles, content formats, and testing strategies to improve advertising effectiveness.</p></article>
+      <article class="wcard c-lilac"><h3>Tracking &amp; Analytics</h3><p>Implementing GA4, Google Tag Manager, Meta Pixel, Conversions API, server-side tracking, and UTM parameters. I use campaign and website data to evaluate performance, understand customer journeys, and guide optimization decisions.</p></article>
+      <article class="wcard c-butter"><h3>Technical SEO &amp; Digital Visibility</h3><p>Improving the technical structure and search visibility of digital platforms through technical and on-page SEO, website architecture, performance improvements, E-E-A-T considerations, Google Business Profile optimization, local citations, and visibility across traditional and AI-driven search experiences.</p></article>
+      <article class="wcard c-rose"><h3>Programming, Databases &amp; Automation</h3><p>Using programming and database technologies to develop digital applications, automate marketing workflows, process data, integrate platforms, and support technical marketing operations.</p></article>
+      <article class="wcard c-mint wide"><h3>Web Development &amp; Digital Platform Infrastructure</h3><p>Designing, developing, and structuring websites, landing pages, and web applications to strengthen a business's online presence and support its digital marketing objectives.</p><p>My approach goes beyond building a website that looks good. I consider how the different parts of a business's digital presence should work together, including website architecture, navigation, content structure, technical SEO, responsiveness, performance, analytics, and integrations.</p><p>This allows me to build and organize digital platforms with online visibility, usability, discoverability, and long-term growth in mind.</p></article>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <div class="bar"></div>
+      <h2>Selected Work <em>&amp; Case Studies</em></h2>
+      <p>My case studies demonstrate different aspects of my work across consumer goods, e-commerce, local services, home services, wine and beverages, and food and beverage brands.</p>
+      <p>Where results are presented as ranges, they represent observed account performance rather than guaranteed outcomes. Where work was completed within an agency team, my contribution is identified accordingly.</p>
+    </div>
+    <div class="tabs" role="tablist" id="cs-tabs" aria-label="Case studies"></div>
+    <div id="cs-panels"></div>
+  </section>
+
+  <section id="influencer">
+    <div class="sec-head"><div class="bar"></div><h2>Influencer Marketing <em>Result</em></h2><p class="label" style="margin-top:-4px">Fashion Brand | 2024–2026</p></div>
+    <div class="inf">
+      <div class="card left">
+        <div><h4>Role</h4><p style="font-weight:600;font-size:17px">Influencer Campaign Strategy &amp; Performance</p></div>
+        <div><h4>Campaign Overview</h4><p style="color:var(--ink2)">Worked with an influencer network of 20 nano and micro-influencers to promote a fashion brand and reach relevant audiences.</p>
+          <div class="dots" role="img" aria-label="20 influencers"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div><h4>Influencer fees</h4><p style="font-weight:600;font-size:17px">Approximately $3,000 across 20 influencers.</p></div>
+      </div>
+      <div class="card right">
+        <h4>Result</h4>
+        <div class="big">~10x</div>
+        <p style="font-weight:600;font-size:17px">Approximately 10x revenue relative to influencer spend.</p>
+        <div class="coins" role="img" aria-label="For every $1 spent on influencer fees, approximately $10 in reported revenue">
+          <div class="crow"><span>Spent</span><div class="cs"><i>$</i></div></div>
+          <div class="crow"><span>Revenue</span><div class="cs b"><i>$</i><i>$</i><i>$</i><i>$</i><i>$</i><i>$</i><i>$</i><i>$</i><i>$</i><i>$</i></div></div>
+        </div>
+        <p style="color:var(--ink2)">The campaign generated approximately $10 in reported revenue for every $1 spent on influencer fees.</p>
+        <p class="note">Reported revenue-to-influencer-fee ratio. This represents revenue, not profit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="web">
+    <div class="sec-head">
+      <div class="bar"></div>
+      <h2>Websites <em>&amp; Web Applications</em></h2>
+      <p>I design and develop digital platforms with a focus on online visibility, functionality, user experience, and business objectives.</p>
+      <p>My approach considers how a website or application fits into the wider digital presence of a business. This includes its structure, technical SEO, navigation, content organization, performance, responsiveness, analytics, and integrations.</p>
+    </div>
+    <h3 class="sub" style="margin-top:0">Websites and Applications I Built</h3>
+    <div class="cards3">
+      <div class="site c-sky"><span class="k">Web Application</span><h3>EcoTrack</h3><p>A clean web application demonstrating my web development, application structure, and implementation capabilities.</p><p><b style="color:var(--ink)">My role:</b> Design and development.</p><a class="go" href="https://ecotrack-git-main-xblankzgaps-projects.vercel.app/" target="_blank" rel="noopener">https://ecotrack-git-main-xblankzgaps-projects.vercel.app/</a></div>
+      <div class="site c-peach"><span class="k">Website</span><h3>Sochi</h3><p>An interactive shop designed and developed to induce increased sales conversion.</p><p><b style="color:var(--ink)">My role:</b> Design and development.</p><a class="go" href="https://sophystudent.github.io/sochi/" target="_blank" rel="noopener">https://sophystudent.github.io/sochi/</a></div>
+      <div class="site c-lilac"><span class="k">Website</span><h3>Moonlight Africa</h3><p>A website providing a central online destination for the music brand, its content, and audience.</p><p><b style="color:var(--ink)">My role:</b> Design and development.</p><a class="go" href="https://sophystudent.github.io/moonlight/index.html" target="_blank" rel="noopener">https://sophystudent.github.io/moonlight/index.html</a></div>
+    </div>
+  </section>
+
+  <section id="landing">
+    <div class="sec-head">
+      <div class="bar"></div>
+      <h2>Landing Page <em>Design &amp; Strategy</em></h2>
+      <p>I approach landing pages as conversion experiences rather than just visual designs. My process begins with understanding the audience, their relationship with the brand, their needs and concerns, and the action the business wants them to take.</p>
+      <p>The following projects demonstrate how I translate those considerations into page structure, messaging, and customer journeys.</p>
+    </div>
+    <div class="tabs" role="tablist" id="lp-tabs" aria-label="Landing pages"></div>
+    <div id="lp-panels"></div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head">
+      <div class="bar"></div>
+      <h2>Technical Skills <em>&amp; Tools</em></h2>
+      <p>I combine digital advertising, marketing technology, analytics, SEO, web development, programming, databases, and automation to support marketing activities from campaign planning through implementation and measurement.</p>
+    </div>
+
+    <h3 class="sub" style="margin-top:0">Tools &amp; Platforms at a Glance</h3>
+    <div class="glance">
+      <div class="g c-mint"><h3>Advertising</h3><div class="tags"><span>Meta Ads Manager</span><span>Google Ads</span><span>TikTok Ads Manager</span><span>Amazon Advertising</span><span>DSPs</span></div></div>
+      <div class="g c-sky"><h3>Tracking</h3><div class="tags"><span>Google Tag Manager</span><span>Meta Pixel</span><span>Conversions API</span><span>UTMs</span></div></div>
+      <div class="g c-peach"><h3>Analytics</h3><div class="tags"><span>GA4</span><span>Looker Studio</span><span>Search Console</span><span>Mixpanel</span><span>Amplitude</span><span>Firebase</span></div></div>
+      <div class="g c-lilac"><h3>User behavior</h3><div class="tags"><span>Microsoft Clarity</span><span>Hotjar</span><span>heatmaps</span><span>session recordings</span></div></div>
+      <div class="g c-butter"><h3>Research</h3><div class="tags"><span>Semrush</span><span>Ahrefs</span><span>Similarweb</span><span>SpyFu</span><span>Keyword Planner</span><span>Meta Ads Library</span></div></div>
+      <div class="g c-rose"><h3>Web development</h3><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>WordPress</span></div></div>
+      <div class="g c-mint"><h3>Programming</h3><div class="tags"><span>Python</span><span>JavaScript</span><span>TypeScript</span></div></div>
+      <div class="g c-sky"><h3>Databases</h3><div class="tags"><span>SQL</span><span>NoSQL</span><span>relational and non-relational databases</span></div></div>
+      <div class="g c-peach"><h3>Integrations</h3><div class="tags"><span>REST APIs</span><span>JSON</span><span>webhooks</span><span>CRM integrations</span></div></div>
+    </div>
+
+    <h3 class="sub">Capabilities in Detail</h3>
+    <div id="sk-list"></div>
+  </section>
+
+  <section id="certs">
+    <div class="sec-head"><div class="bar"></div><h2>Certifications <em>&amp; Professional Training</em></h2></div>
+    <div class="two">
+      <div class="certs">
+        <div class="cert"><span>Google Campaign Manager 360</span><b>2026</b></div>
+        <div class="cert"><span>Google Analytics</span><b>2026</b></div>
+        <div class="cert"><span>HubSpot SEO</span><b>2025</b></div>
+        <div class="cert"><span>HubSpot AEO Fundamentals</span><b>2026</b></div>
+        <div class="cert"><span>LM Tech, Software Engineering</span><b>2025</b></div>
+        <div class="cert"><span>TS Academy, Backend Development</span><b>2026</b></div>
+      </div>
+      <div>
+        <h3 class="sub" style="margin-top:0;font-size:26px">Agencies &amp; Organizations</h3>
+        <div style="display:grid;gap:12px">
+          <div class="org c-sky"><h3>United States</h3><ul><li>Venadar <span>Agency</span></li><li>Proven Marketing Now <span>Agency</span></li><li>Shae Marcus Consulting <span>Agency</span></li></ul></div>
+          <div class="org c-peach"><h3>Nigeria</h3><ul><li>InHouse HQ Ltd <span>Awka, Anambra State</span></li></ul></div>
+        </div>
+      </div>
+    </div>
+    <p class="note2">My experience includes working within agency teams as an independent contractor and directly with businesses, contributing to campaign strategy, research, advertising execution, analytics, creative analysis, optimization, web development, and technical implementation.</p>
+  </section>
+
+  <section id="show">
+    <div class="sec-head">
+      <div class="bar"></div>
+      <h2>What I Would Do <em>for Your Show</em></h2>
+      <p>My approach would combine audience research, paid advertising, creative analysis, tracking, and performance optimization to build awareness and grow an engaged audience for the show.</p>
+    </div>
+    <ol class="tl">
+      <li><div class="n">1</div><div class="body"><h3>Research the Market &amp; Identify Opportunities</h3><p>I would research comparable reality shows, entertainment campaigns, competing content, and relevant hair and beauty brands to understand their advertising approaches, audience engagement, and positioning.</p><p>The goal would be to identify opportunities for the show to stand out and develop a clear promotional angle.</p></div></li>
+      <li><div class="n">2</div><div class="body"><h3>Implement Tracking Before Advertising Spend</h3><p>Before launching campaigns, I would establish the measurement infrastructure.</p><p>This would include:</p><ul><li>Meta Pixel and Conversions API.</li><li>Google Analytics 4.</li><li>Google Tag Manager.</li><li>UTM campaign parameters.</li><li>Relevant website and landing-page conversion events.</li></ul><p>This ensures campaign traffic, engagement, and agreed conversion actions can be measured.</p></div></li>
+      <li><div class="n">3</div><div class="body"><h3>Build Relevant Audiences</h3><p>Potential audience segments would include:</p><ul><li>Hair enthusiasts.</li><li>Hairstylists and salon owners.</li><li>Beauty and lifestyle audiences.</li><li>Reality television and entertainment fans.</li><li>People interested in the show's themes and participants.</li></ul><p>I would also develop lookalike audiences where sufficient first-party data is available and retarget people who have watched promotional videos, visited the website, or engaged with campaign content.</p></div></li>
+      <li><div class="n">4</div><div class="body"><h3>Give Each Advertising Platform a Clear Role</h3>
+        <div class="roles">
+          <div><b>TikTok and Instagram:</b> Short-form clips, engaging moments, participant introductions, behind-the-scenes content, and audience interaction.</div>
+          <div><b>YouTube:</b> Trailers, longer promotional videos, and video-view campaigns.</div>
+          <div><b>Google Search:</b> Reaching people actively searching for the show, its participants, or related topics.</div>
+          <div><b>Programmatic Advertising:</b> Expanding reach through relevant audience and contextual targeting where appropriate.</div>
+        </div>
+        <p>Platform selection and budget allocation would depend on the campaign objectives, available assets, audience research, and expected costs.</p></div></li>
+      <li><div class="n">5</div><div class="body"><h3>Analyze and Test the Creative</h3><p>I would study the available promotional content, evaluate its messaging and appeal, and recommend creative angles, hooks, and formats suited to the intended audiences.</p><p>Different approaches would be tested using available video and image assets. Campaign performance would then inform which creative directions should receive more investment and which should be adjusted.</p></div></li>
+      <li><div class="n">6</div><div class="body"><h3>Measure and Report Performance</h3><p>I would develop a centralized reporting dashboard covering agreed campaign metrics, such as:</p>
+        <div class="metrics">
+          <div><h4>Awareness</h4><ul><li>Reach</li><li>Impressions</li><li>Video views</li><li>Cost per thousand impressions</li></ul></div>
+          <div><h4>Engagement</h4><ul><li>Watch time</li><li>Video completion rate</li><li>Shares</li><li>Comments</li><li>Engagement rate</li></ul></div>
+          <div><h4>Audience Growth</h4><ul><li>New followers</li><li>Returning viewers</li><li>Audience growth rate</li></ul></div>
+          <div><h4>Conversions</h4><ul><li>Website visits</li><li>Mailing-list registrations</li><li>Sign-ups</li><li>Ticket sales or other agreed actions, where applicable</li></ul></div>
+        </div>
+        <p style="margin-top:14px">The reporting structure would be based on the show's primary objectives, rather than treating every metric as equally important.</p></div></li>
+    </ol>
+    <div class="need">
+      <h3>What I Would Need From You</h3>
+      <p>To develop the campaign properly, I would need:</p>
+      <ul>
+        <li>Details about the show, its concept, format, and launch schedule.</li>
+        <li>The target audience and geographical markets.</li>
+        <li>Available promotional videos, photographs, trailers, and other creative assets.</li>
+        <li>Existing social media accounts and website information.</li>
+        <li>The proposed advertising budget.</li>
+        <li>The primary campaign objective: views, followers, registrations, sign-ups, ticket sales, or another measurable outcome.</li>
+      </ul>
+      <p class="after">From there, I can develop a campaign strategy, advertising structure, creative testing plan, tracking requirements, and reporting framework.</p>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-block:0">
+    <div class="fin">
+      <div class="label" style="color:var(--ink2)">Let's Talk</div>
+      <h2>Chisom Sophy Abraham</h2>
+      <div class="role"><span>Performance Marketer</span><span>Technical SEO</span><span>Analytics</span><span>Web Development &amp; Marketing Technology</span></div>
+      <p class="go">Let's discuss your goals and how I can help turn them into measurable digital marketing outcomes.</p>
+      <div class="contact">
+        <span class="chip"><b>Email</b><span>chisomsophyabraham@gmail.com</span><button type="button" data-copy="chisomsophyabraham@gmail.com">Copy</button></span>
+        <span class="chip"><b>Phone</b><span>+234 806 859 3345</span><button type="button" data-copy="+234 806 859 3345">Copy</button></span>
+        <a class="chip" href="https://github.com/SophyStudent" target="_blank" rel="noopener"><b>GitHub</b><span>https://github.com/SophyStudent</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+var TINT=['var(--mint)','var(--sky)','var(--peach)','var(--lilac)','var(--butter)','var(--rose)'];
+var CS=[
+{id:'tushy',name:'TUSHY',ind:'Consumer Goods',role:'Campaign Strategy, Audience Research & Analytics',budget:'Approximately $10,000',
+ resp:['Planned connected awareness, consideration, and conversion campaigns.','Built custom, lookalike, and retargeting audiences using first-party data.','Set up and monitored Meta Pixel, Conversions API, and UTM tracking.','Evaluated campaign performance across the customer acquisition funnel.'],
+ rows:[['CPC',0.6,2.5,4,'$0.60–$2.50+','$0','$4',1],['CTR',1.0,4.0,5,'1.0–4.0%','0%','5%'],['Conversion rate',2.5,5.5,8,'2.5–5.5%','0%','8%'],['CPA',25,45,60,'$25–$45','$0','$60'],['ROAS',2.5,3.5,4,'2.5–3.5x','0x','4x']]},
+{id:'silkland',name:'SILKLAND',ind:'E-commerce / Amazon',role:'Paid Search Strategy, Audience Research & Competitor Analysis',budget:'Approximately $10,000–$15,000',
+ resp:['Researched and targeted high-intent keywords.','Developed keyword-focused advertising copy.','Used Google Ads to test search intent before increasing investment in Amazon.','Researched competitor advertising and segmented audiences.','Evaluated advertising performance across search and Amazon campaigns.'],
+ note:'Observed ranges across Amazon ad sets.',
+ rows:[['CPC',1.5,3.5,5,'$1.50–$3.50+','$0','$5',1],['CTR',0.25,0.45,0.6,'0.25–0.45%','0%','0.6%'],['Conversion rate',6,10,12,'6–10%','0%','12%'],['ACoS',40,55,60,'40–55%','0%','60%'],['ROAS',1.8,2.5,3,'1.8–2.5x','0x','3x'],['TACoS',15,25,30,'15–25%','0%','30%']]},
+{id:'morair',name:'MORAIR',ind:'HVAC Local Services',role:'Local Advertising, Analytics & Brand Visibility',budget:'Approximately $5,000',
+ resp:['Participated in A/B testing and campaign performance analysis.','Supported Google Ads and Google Business Profile activities.','Helped maintain consistent business information and citations across online directories.','Contributed to local brand visibility and advertising optimization.'],
+ note:'Work and results delivered together with the agency team.',
+ rows:[['Consultation calls',5,10,12,'5–10 per week','0','12 / week'],['Calls to clients',1.6,2.4,5,'Approximately 2%','0%','5%']]},
+{id:'home',name:'HOME-SERVICES BRAND',ind:'Roofing and Construction',role:'Analytics, Conversion Optimization, Web Strategy & DSP Automation',extra:[['Market','United States'],['Business scale','20+ branches'],['Client name','Not disclosed']],
+ resp:['Reviewed website performance through GA4.','Analyzed session recordings to understand how visitors interacted with the website.','Identified opportunities to improve homepage layout, contrast, visual hierarchy, and user experience.','Developed scripts for generating advertising asset variations.','Wrote scripts to synchronize CRM audiences with DSP platforms, working with the agency team.','Contributed to website improvements informed by user behavior and search visibility.'],
+ hl:['<b>Google Search Visibility:</b> Page-one rankings for multiple search phrases.','The ranking improvements followed work addressing the website\'s E-E-A-T signals.']},
+{id:'hemi',name:'HEMISPHERES WINE',ind:'Wine & Beverages',role:'Creative Strategy, Competitor Research & Optimization',extra:[['Setting','Agency team']],
+ resp:['Developed creative briefs and campaign angles.','Studied and analyzed advertising creatives and messaging.','Recommended hooks, formats, and messaging directions based on campaign objectives and audience considerations.','Evaluated static, video, UGC, and carousel advertisements.','Conducted A/B and multivariate testing.','Evaluated statistical significance when assessing test results.','Researched competitor advertising to identify messaging gaps and creative opportunities.','Used performance insights to guide creative optimization.'],
+ hl:['Creative strategy, research, testing, and optimization contributions.'],resTitle:'Results'},
+{id:'peak',name:'PEAK MILK',ind:'Food & Beverage',role:'Creative Strategy, Competitor Research & Optimization',extra:[['Setting','Agency team']],
+ resp:['Contributed to campaign creative planning and briefs.','Studied advertising creatives, messaging, hooks, and audience responses.','Recommended creative angles and messaging approaches across static, video, UGC, and carousel formats.','Used performance data to guide creative recommendations.','Analyzed competitor advertising to identify opportunities for stronger messaging.','Supported ongoing creative testing and optimization.'],
+ hl:['Creative strategy, research, testing, and optimization contributions.'],resTitle:'Results'}
+];
+function tiles(rows){
+  return '<div class="mt">'+rows.map(function(r){
+    var lo=r[1],hi=r[2],max=r[3],l=lo/max*100,w=(hi-lo)/max*100;
+    return '<div class="m" title="'+esc(r[0]+': '+r[4])+'"><div class="k">'+esc(r[0])+'</div><div class="v">'+esc(r[4])+'</div><div class="track" role="img" aria-label="'+esc(r[0]+' '+r[4])+'"><div class="rf'+(r[7]?' open':'')+'" style="left:'+l+'%;width:'+w+'%"></div></div><div class="sc"><span>'+esc(r[5])+'</span><span>'+esc(r[6])+'</span></div></div>';
+  }).join('')+'</div>';
+}
+function csPanel(c,i){
+  var f='<dl class="facts"><dt>Industry</dt><dd>'+esc(c.ind)+'</dd><dt>Role</dt><dd>'+esc(c.role)+'</dd>';
+  if(c.budget)f+='<dt>Budget</dt><dd>'+esc(c.budget)+'</dd>';
+  (c.extra||[]).forEach(function(e){f+='<dt>'+esc(e[0])+'</dt><dd>'+esc(e[1])+'</dd>'});
+  f+='</dl>';
+  var res='<h4>'+(c.resTitle||'Observed Results')+'</h4>';
+  res+=c.rows?tiles(c.rows):c.hl.map(function(x){return '<div class="hl">'+x+'</div>'}).join('');
+  if(c.note)res+='<p class="note">'+esc(c.note)+'</p>';
+  return '<div class="panel" role="tabpanel" id="p-'+c.id+'" hidden style="--tint:'+TINT[i%6]+'"><div class="phead"><h3>'+esc(c.name)+'</h3>'+f+'</div><div class="pbody"><div><h4>Responsibilities</h4><ul>'+c.resp.map(function(r){return '<li><span>'+esc(r)+'</span></li>'}).join('')+'</ul></div><div>'+res+'</div></div></div>';
+}
+function tabs(tabsEl,panelsEl,items,label,sub){
+  tabsEl.innerHTML=items.map(function(c,i){return '<button class="tab" role="tab" id="t-'+c.id+'" aria-controls="p-'+c.id+'" aria-selected="'+(i===0)+'"'+'>'+esc(label(c,i))+(sub?'<small>'+esc(sub(c,i))+'</small>':'')+'</button>'}).join('');
+  panelsEl.innerHTML=items.map(function(c){return c.html}).join('');
+  var bs=tabsEl.querySelectorAll('.tab'),ps=panelsEl.querySelectorAll('.panel');
+  function sel(i){bs.forEach(function(b,j){b.setAttribute('aria-selected',j===i)});ps.forEach(function(p,j){p.hidden=j!==i})}
+  bs.forEach(function(b,i){b.addEventListener('click',function(){sel(i)});b.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=(i+(e.key==='ArrowRight'?1:-1)+bs.length)%bs.length;sel(n);bs[n].focus()}})});
+  sel(0);
+}
+CS.forEach(function(c,i){c.html=csPanel(c,i)});
+tabs(document.getElementById('cs-tabs'),document.getElementById('cs-panels'),CS,function(c,i){return (i+1)+'. '+c.name},function(c){return c.ind});
+
+function thought(arr){return '<div class="thought">'+arr.map(function(t){return '<div><b>'+t[0]+'</b><span>'+t[1]+'</span></div>'}).join('')+'</div>'}
+var LP=[
+{id:'nuban',label:'1. NUBAN BEAUTY',sub:'Existing-customer landing page',html:
+'<div class="panel" role="tabpanel" id="p-nuban" hidden style="--tint:var(--rose)"><div class="phead"><h3>NUBAN BEAUTY | EXISTING-CUSTOMER LANDING PAGE</h3></div><div class="lpbody">'+
+'<div class="meta"><div><b>Project</b>In My Skin™ Foundation Relaunch</div><div><b>Objective</b>Encourage previous customers to purchase the new and improved foundation formula.</div><div><b>View Landing Page</b><a href="https://sophystudent.github.io/nuban/existing-customers.html" target="_blank" rel="noopener" style="overflow-wrap:anywhere;font-weight:700">https://sophystudent.github.io/nuban/existing-customers.html</a></div></div>'+
+'<div><h4>Audience Definition</h4><div class="tbl"><table><thead><tr><th>Attribute</th><th>Target</th></tr></thead><tbody>'+
+[['Audience temperature','Hot audience'],['Customer relationship','Existing and returning customers'],['Gender','Women'],['Customer type','Individual makeup users'],['Product interest','People who regularly wear foundation'],['Skin complexion','Women with dark and deeper skin tones'],['Product','New and improved In My Skin™ foundation']].map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('')+'</tbody></table></div></div>'+
+'<div><h4>My Design Thought Process</h4><p class="lp-intro">This landing page targets customers who have already purchased from NUBAN. They know the brand and have experience with its previous foundation. Therefore, the page does not need to introduce the brand from scratch.</p><p class="lp-intro" style="margin:10px 0 18px">The objective is to show these customers what has improved, give them confidence in the new formula, and make repurchasing straightforward.</p>'+
+thought([['1. Relationship-led messaging','The hero section welcomes existing customers back and presents the new foundation as an improvement informed by customer feedback.'],['2. Product evolution','A comparison between the previous Classic Matte foundation and the new In My Skin™ formula helps customers understand what has changed and why they might want to upgrade.'],['3. Shade confidence','A major concern for returning customers is whether their previous foundation shade will still match. The page addresses this through a shade guide, product swatches, WhatsApp consultation, and a seven-day shade exchange offer.'],['4. Flexible purchase options','Customers can choose between replacing just their foundation or purchasing the complete four-piece suite. The bundle communicates its value and savings without forcing every customer into a larger purchase.'],['5. Trust at the point of decision','Reviews, payment information, FAQs, and the shade exchange guarantee are positioned to help customers resolve concerns before completing their purchase.']])+'</div>'+
+'<p class="strategy"><b>Strategic approach:</b> Upgrade and repurchase marketing for a hot audience, rather than general brand-awareness marketing.</p></div></div>'},
+{id:'blessed',label:'2. MOONLIGHT AFRICA',sub:'Blessed release landing page',html:
+'<div class="panel" role="tabpanel" id="p-blessed" hidden style="--tint:var(--lilac)"><div class="phead"><h3>MOONLIGHT AFRICA | BLESSED RELEASE LANDING PAGE</h3></div><div class="lpbody">'+
+'<div class="meta"><div><b>Project</b>Blessed by Hotkeed</div><div><b>Objective</b>Support music discovery, streaming, audience engagement, and ongoing artist-fan relationships.</div><div><b>View Landing Page</b><a href="https://sophystudent.github.io/moonlight/blessed-out-now.html" target="_blank" rel="noopener" style="overflow-wrap:anywhere;font-weight:700">https://sophystudent.github.io/moonlight/blessed-out-now.html</a></div></div>'+
+'<div><h4>Audience Definition</h4><p class="lp-intro">The page is intended for existing fans, music listeners, potential new listeners, and people discovering the artist through promotional campaigns.</p></div>'+
+'<div><h4>My Design Thought Process</h4><p class="lp-intro" style="margin-bottom:18px">Rather than sending visitors to different platforms without a central destination, the landing page brings the song\'s promotional content and audience actions together.</p>'+
+thought([['1. Immediate music discovery','The page introduces the released song and gives visitors a direct way to listen.'],['2. Centralized streaming access','Streaming links allow visitors to select their preferred music platform without having to search for the song themselves.'],['3. Visual content','The music video and other promotional visuals give visitors additional ways to experience and engage with the release.'],['4. Artist information','Tour dates and merchandise provide additional touchpoints for fans interested in following the artist.'],['5. Audience retention','The mailing-list feature gives visitors an opportunity to maintain a connection with the artist beyond the initial visit.']])+'</div>'+
+'<p class="strategy"><b>Strategic approach:</b> Turn promotional attention into music discovery, engagement, and an ongoing relationship with the artist\'s audience.</p></div></div>'}
+];
+tabs(document.getElementById('lp-tabs'),document.getElementById('lp-panels'),LP,function(c){return c.label},function(c){return c.sub});
+
+var SK=[
+['1. Digital Advertising & Campaign Management',null,['Campaign planning, setup, and management.','Audience research, segmentation, and targeting.','Custom, lookalike, and retargeting audience development.','Budget allocation and campaign optimization.','Search, display, social, video, and programmatic advertising.','Campaign funnel development and performance evaluation.','Creative testing and advertising performance analysis.'],'Platforms',['Meta Ads Manager','Google Ads','TikTok Ads Manager','Amazon Advertising','Demand-Side Platforms (DSPs)']],
+['2. Tracking & Marketing Technology',null,['Conversion tracking implementation.','Pixel and event configuration.','Server-side tracking.','Conversion API integrations.','UTM campaign tracking.','Tag management and debugging.','CRM and advertising-platform audience synchronization.','Marketing technology integrations through APIs.'],'Tools & Technologies',['Google Tag Manager','Meta Pixel','Meta Conversions API','Google Analytics 4','UTM parameters','APIs and webhooks','Server-side tracking']],
+['3. Analytics & Performance Measurement',null,['Campaign and website performance analysis.','Conversion funnel analysis.','Traffic-source and attribution analysis.','Customer journey analysis.','Campaign reporting and dashboard development.','Data interpretation and optimization recommendations.'],'Tools',['Google Analytics 4','Looker Studio','Google Search Console','Mixpanel','Amplitude','Firebase']],
+['4. User Behavior & Conversion Optimization',null,['Website behavior analysis.','Heatmap and session-recording analysis.','Landing-page and website conversion optimization.','User journey evaluation.','A/B and multivariate testing.','Identifying usability and conversion barriers.'],'Tools',['Microsoft Clarity','Hotjar','Heatmaps','Session recordings']],
+['5. SEO, AEO & Digital Research',null,['Technical SEO audits and implementation.','On-page SEO optimization.','Website architecture and content structure.','Keyword and competitor research.','Search-intent analysis.','Local SEO and Google Business Profile optimization.','Local citation management.','E-E-A-T-focused website improvements.','Answer Engine Optimization (AEO).','Search visibility and content performance analysis.'],'Tools',['Semrush','Ahrefs','Similarweb','SpyFu','Google Search Console','Google Keyword Planner','Meta Ads Library']],
+['6. Web Development & Digital Application Architecture',null,['Website and web application development.','Responsive frontend development.','Frontend architecture and component-based development.','Landing-page design and implementation.','Website structure, navigation, and content organization.','CMS development and customization.','Database design and integration.','Website and application performance improvements.','Technical SEO implementation.','Analytics, tracking, and third-party integrations.','Structuring digital platforms to support online visibility, usability, and discoverability.'],'Technologies',['HTML','CSS','JavaScript','TypeScript','React','WordPress','CMS platforms']],
+['7. Programming, Databases & Automation',null,['Python scripting and automation.','JavaScript and TypeScript programming.','API integrations.','Marketing reporting automation.','Advertising-platform and DSP workflow automation.','Data processing and transformation.','Database design and management.','CRM and audience synchronization.','Backend application logic and data handling.','Custom scripts for repetitive marketing operations.'],'Technologies',['Python','JavaScript','TypeScript','SQL','NoSQL','Relational databases','Non-relational databases','REST APIs','JSON','Webhooks']],
+['8. Creative Strategy & Advertising Analysis','My strength in creative strategy is studying, analyzing, and interpreting advertising creatives to develop insightful recommendations for campaign direction and improvement.',['Competitor creative research and analysis.','Advertising message and positioning analysis.','Audience-response and creative-performance evaluation.','Identifying effective hooks, messaging angles, and content approaches.','Recommending creative directions based on campaign objectives.','Evaluating creative formats and their suitability for different audiences and platforms.','Developing creative briefs and testing recommendations.','A/B and multivariate testing analysis.','Statistical significance assessment.'],'Creative Formats',['Static advertisements','Short-form video','User-generated content (UGC)','Carousel advertisements','Search advertisements','Display advertisements','Long-form and short-form video advertising']]
+];
+document.getElementById('sk-list').innerHTML=SK.map(function(s,i){
+  return '<details class="sk"'+(i===0?' open':'')+'><summary>'+esc(s[0])+'</summary><div class="skbody">'+(s[1]?'<p class="intro">'+esc(s[1])+'</p>':'')+'<div><h4>Capabilities</h4><ul>'+s[2].map(function(x){return '<li><span>'+esc(x)+'</span></li>'}).join('')+'</ul></div><div><h4>'+esc(s[3])+'</h4><div class="tags">'+s[4].map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div></div></div></details>';
+}).join('');
+
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-copy]');if(!b)return;
+  var t=b.getAttribute('data-copy');
+  function pick(){var s=b.previousElementSibling;if(!s)return;var r=document.createRange();r.selectNodeContents(s);var g=getSelection();g.removeAllRanges();g.addRange(r)}
+  function done(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400)}
+  try{navigator.clipboard.writeText(t).then(done,pick)}catch(x){pick()}
+});
+})();
+</script>
+
+</body></html>
